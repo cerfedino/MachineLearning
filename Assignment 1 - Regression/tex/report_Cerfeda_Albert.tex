@@ -75,13 +75,12 @@ Use the family of models $f(\mathbf{x}, \boldsymbol{\theta}) = \theta_0 + \theta
 	\item [b.] Evaluate the test performance of your model using the mean squared error as performance measure.\\
 	Mean Squared Error (MSE) on the Test set: \input{fig/out/T1_MSE_Test.tex}
 \end{itemize}
-
 \subsection{Task 2}
 Consider any family of non-linear models of your choice to address the above regression problem.
 \begin{wrapfigure}{l}{0.20\linewidth}
     \centering
     \includegraphics[width=1\linewidth]{fig/out/T2.predictions.png}
-    \vspace{-2cm}
+    \vspace{-1.7cm}
     \label{fig:1.1}
 \end{wrapfigure}
 %  TODO: Explain model
@@ -103,7 +102,7 @@ You will get extra points if you provide a model of your choice whose test perfo
     \vspace{-1.5cm}
     \label{fig:1.1}
 \end{wrapfigure}
-As mentioned in the exercise text, the baseline model achieves a MSE of \textbf{0.022} on the test set. \\ The simple neural network I used, once trained on the training set and evaluated on the test set achieves a MSE of \textbf{\input{fig/out/T3_MSE_Test.tex}}, lower than the baseline model.\\
+As mentioned in the exercise text, the baseline model achieves a MSE of \textbf{0.022} on the test set. \\ The simple neural network I used, once trained on the training set and evaluated on the test set achieves a MSE of \textbf{\input{fig/out/T3_MSE_Test.tex}}, lower than the baseline model. The neural network has 4 subsequent dense layers with 64 nodes each. The activation functions of each layer (in order) are: Exponential Linear Unit, Rectified Linear Unit, Sigmoid and Linear. \\
 %----------------------------------------------------------------------------------------
 %	Questions
 %----------------------------------------------------------------------------------------
@@ -125,7 +124,7 @@ As mentioned in the exercise text, the baseline model achieves a MSE of \textbf{
 \item[A1.1] The figure shows how the Test Error, Training Error and Validation Error change based on the model complexity. The graph demonstrates how the error estimates are not actually monotonically increasing/decreasing but overall tend to grow or shrink as the complexity increases.\\
 We can see as how the training error tends to decrease with more complex models. That is because the model, having more parameters, has greater flexibility to learn the complex patterns of data. As our predictions get closer and more accurate, our test error increases as the model has learned the training data "too well" and therefore is not able to predict new, previously unseen data (overfitting).
 \item[Q1.2] \textbf{Explain the behaviours of the curves in each of the three highlighted sections in the figure, namely (a), (b), and (c).}   
-\item[A1.2] The three subfigures highlight three separate phases related to the model complexity or the training phase. Subfigure \verb|a)| shows the initial stages of the training process, where the error estimates are high and quickly decreasing as the learning method minimizes the training error. Ending training during this phase would be premature as the model has not learned yet to approximate the function generating the data (i.e underfitting). Subfigure \verb|b)| shows the situation where the model is properly trained. We can see that the test error has reached a minimum, after which it will start increasing again. This means that the model is not running into loss of generalizability yet and did not incur in overfitting. Finally, in the last picture we can clearly see how the model is approximating the noise of the data and is incurring into overfitting. That is, the model is really good at predicting the biased training data and is not able to predict never-seen-before data.
+\item[A1.2] The three subfigures highlight three separate phases related to the model complexity or the training phase. Subfigure \verb|a)| shows the case in which the model is too simple, where the error estimates are high and quickly decreasing as the model complexity increases. Choosing the model complexity in this phase would be premature as the model is not capable to approximate the function generating the data (i.e underfitting). Subfigure \verb|b)| shows the situation where the model has an optimal complexity. We can see that the test error has reached a minimum, after which it will start increasing again. This means that the model is not running into loss of generalizability yet and did not incur in overfitting. Finally, in the last picture we can clearly see how the model is complex enough to approximate the noise of the data and is incurring into overfitting. That is, the model is really good at predicting the biased training data and is not able to predict never-seen-before data.
 \begin{itemize}
 \item[Q1.2.a] \textbf{Can you identify any signs of overfitting or underfitting in the plot? If yes, explain which sections correspond to which concept.}
 \item[A1.2.a] As previously stated, we can see underfitting happening in Subfigure \verb|a)| and overfitting happening in picture \verb|c)|.
